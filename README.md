@@ -29,8 +29,7 @@ Posteriormente, serão implementadas as seguintes funcionalidades:
 Faça o clone do projeto para a sua máquina.
 Em seguida, rode o seguinte comando:
 
-> Certifique-se de que a CLI esteja instalada. Caso não esteja acesse a (documentação)
-[https://adonisjs.com/docs/4.1/installation]
+> Certifique-se de que a CLI esteja instalada. Caso não esteja acesse a (documentação)[https://adonisjs.com/docs/4.1/installation]
 
 ```js
 adonis migration:run
