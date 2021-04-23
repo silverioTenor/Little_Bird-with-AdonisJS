@@ -6,9 +6,9 @@ const Schema = use('Schema')
 class TweetSchema extends Schema {
   up () {
     this.create('tweets', (table) => {
-      table.increments()
+      table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
       table
-        .integer('user_id')
+        .uuid('user_id')
         .unsigned()
         .notNullable()
         .references('id')
@@ -16,6 +16,7 @@ class TweetSchema extends Schema {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table.string('content', 240).notNullable()
+      table.integer('like')
       table.timestamps()
     })
   }

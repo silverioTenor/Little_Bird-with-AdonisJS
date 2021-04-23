@@ -20,9 +20,14 @@ Route.post('/register', 'AuthController.register')
 Route.post('/authenticate', 'AuthController.authenticate')
 
 Route.group(() => {
-  Route.resource('tweets', 'TweetController').apiOnly().except("update")
+  Route.resource('/tweets', 'TweetController').apiOnly().except("update")
+  Route.patch('/tweets/like/:tweet_id', 'LikeController.store')
+  Route.patch('/tweets/dislike/:tweet_id', 'LikeController.destroy')
 }).middleware("auth")
 
 Route.group(() => {
-  Route.resource('comments', 'CommentController').apiOnly().except(["show", "update"])
+  Route.resource('/comments', 'CommentController').apiOnly().except(["show", "update"])
+  Route.patch('/comments/like/:comment_id', 'LikeController.store')
+  Route.patch('/comments/dislike/:comment_id', 'LikeController.destroy')
 }).middleware("auth")
+
