@@ -22,3 +22,7 @@ Route.post('/authenticate', 'AuthController.authenticate')
 Route.group(() => {
   Route.resource('tweets', 'TweetController').apiOnly().except("update")
 }).middleware("auth")
+
+Route.group(() => {
+  Route.resource('comments', 'CommentController').apiOnly().except(["show", "update"])
+}).middleware("auth")

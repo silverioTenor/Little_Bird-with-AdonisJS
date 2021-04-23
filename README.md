@@ -21,8 +21,7 @@ Neste primeiro momento, a API consiste apenas em:
 Posteriormente, serão implementadas as seguintes funcionalidades:
 
 - publicação de imagens,
-- curtidas,
-- comentarios
+- curtidas
 
 ## Executando
 
